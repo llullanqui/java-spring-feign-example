@@ -38,7 +38,7 @@ public class PersonController {
         return new ResponseEntity<>(personService.createPerson(person), HttpStatus.OK);
     }
 
-    @PutMapping
+    @PostMapping(value = "/{id}/generate-call")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Person> addCall(@PathVariable int id) {
         return new ResponseEntity<>(personService.addCall(id), HttpStatus.OK);
