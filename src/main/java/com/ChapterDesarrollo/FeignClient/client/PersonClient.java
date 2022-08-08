@@ -1,12 +1,13 @@
 package com.ChapterDesarrollo.FeignClient.client;
 
+import com.ChapterDesarrollo.FeignClient.configuration.FeignClientsFullConfiguration;
 import com.ChapterDesarrollo.FeignClient.dto.person.Person;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(value = "persons", url = "https://62ed4279a785760e67683488.mockapi.io/api/v2")
+@FeignClient(value = "persons", url = "https://62ed4279a785760e67683488.mockapi.io/api/v2", configuration = FeignClientsFullConfiguration.class)
 public interface PersonClient {
 
     @GetMapping(value = "/person")
